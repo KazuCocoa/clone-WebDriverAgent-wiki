@@ -53,7 +53,7 @@ $DEVICE_URL/session/$SESSION_ID/orientation`
 `curl -X GET $JSON_HEADER $DEVICE_URL/source`
 
 # Searching for elements
-Some of element search endpoints use property names listed [here](https://github.com/marekcirkos/WebDriverAgent/wiki/Query-examples/_edit#querying-element-properties).
+Some of element search endpoints use property names listed [here](https://github.com/facebook/WebDriverAgent/wiki/Queries#querying-properties).
 
 You can search for elements by:
 * property with given value (`link text`)
