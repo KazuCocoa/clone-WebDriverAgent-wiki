@@ -30,10 +30,10 @@ More about how to start WebDriverAgent [here](https://github.com/facebook/WebDri
 If you are having some issues please checkout [wiki](https://github.com/facebook/WebDriverAgent/wiki/Common-Issues) first.
 
 ## For Contributors
-If you want to help us out, you are more than welcome to. However please make sure you have followed the guidelines in [CONTRIBUTING](CONTRIBUTING.md).
+If you want to help us out, you are more than welcome to. However please make sure you have followed the guidelines in [CONTRIBUTING](https://github.com/facebook/WebDriverAgent/CONTRIBUTING.md).
 
 ## License
 
-[`WebDriverAgent` is BSD-licensed](LICENSE). We also provide an additional [patent grant](PATENTS).
+[`WebDriverAgent` is BSD-licensed](https://github.com/facebook/WebDriverAgent/LICENSE). We also provide an additional [patent grant](https://github.com/facebook/WebDriverAgent/PATENTS).
 
 Have fun!
