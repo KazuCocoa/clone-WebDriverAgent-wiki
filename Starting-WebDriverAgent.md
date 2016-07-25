@@ -15,7 +15,7 @@ xcodebuild -project WebDriverAgent.xcodeproj \
            -destination 'platform=iOS Simulator,name=iPhone 6' \
            test
 ```
-### C: Using fbsimctl from [FBSimulatorControl](https://github.com/facebook/FBSimulatorControl) framework.
+### C: Using [fbsimctl](https://github.com/facebook/FBSimulatorControl/tree/master/fbsimctl) from [FBSimulatorControl](https://github.com/facebook/FBSimulatorControl) framework.
 ```
 ./fbsimctl --state=booted \
            launch_xctest [path]/WebDriverAgentRunner.xctest com.apple.mobilesafari --port 8100 -- \
