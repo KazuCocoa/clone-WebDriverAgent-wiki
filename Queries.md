@@ -138,6 +138,6 @@ curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/clear
 
 # Swipe
 ### Swipe Left
-curl -X GET $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/swipeLeft
+`curl -X GET $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/swipeLeft`
 ### Swipe Right
-curl -X GET $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/swipeRight
+`curl -X GET $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/swipeRight`
