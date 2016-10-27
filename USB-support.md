@@ -1,4 +1,2 @@
 WebDriverAgent also supports sending HTTP requests via USB in cases when your devices have restricted access to Wifi.
 For more detail have a look at [FBHTTPOverUSBServer.m](https://github.com/facebook/WebDriverAgent/blob/master/WebDriverAgentLib/Routing/FBHTTPOverUSBServer.m) and [WebDriverAgentUSBClient](https://github.com/facebook/WebDriverAgent/tree/master/WebDriverAgentUSBClient). It simply listens for wrapped HTTP requests on USB port and is implemented by using [peertalk](https://github.com/rsms/peertalk).
-
-More details and client side implementation will be published soon.
