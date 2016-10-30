@@ -135,9 +135,3 @@ curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/clear
 `curl -X POST $JSON_HEADER -d "{\"match\":1}" $DEVICE_URL/session/$SESSION_ID/simulator/touch_id`
 ### Do not match TouchID
 `curl -X POST $JSON_HEADER -d "{\"match\":0}" $DEVICE_URL/session/$SESSION_ID/simulator/touch_id`
-
-# Swipe
-### Swipe Left
-`curl -X GET $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/swipeLeft`
-### Swipe Right
-`curl -X GET $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/swipeRight`
