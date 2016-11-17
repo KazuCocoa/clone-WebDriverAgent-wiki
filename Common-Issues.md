@@ -2,7 +2,7 @@
 
 It has been reported that client can't connect to China devices via WiFi. Issue is unknown, but you should have a look at [this issue](https://github.com/facebook/WebDriverAgent/issues/288).
 
-Best workaround is to use [iproxy](http://iphonedevwiki.net/index.php/SSH_Over_USB) or [USB client](https://github.com/facebook/WebDriverAgent/wiki/USB-support)
+Best workaround is to use [iproxy](http://iphonedevwiki.net/index.php/SSH_Over_USB) or [USB client](https://github.com/facebook/WebDriverAgent/wiki/USB-support). [Interesting post on that topic]( https://testerhome.com/topics/6331)
 ___
 ### Failed to authorize rights (0x1) with status: -60007
 
