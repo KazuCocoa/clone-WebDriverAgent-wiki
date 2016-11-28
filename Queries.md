@@ -87,7 +87,7 @@ $DEVICE_URL/session/$SESSION_ID/elements
 * using `predicate string`
 ```
 curl -X POST $JSON_HEADER \
--d "{\"using\":\"predicate string\",\"value\":\"isWDVisible=1\"}" \
+-d "{\"using\":\"predicate string\",\"value\":\"wdVisible==1\"}" \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
