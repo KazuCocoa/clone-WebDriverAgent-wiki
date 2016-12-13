@@ -124,11 +124,11 @@ curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/clear
 
 # Alerts
 ### Get alert
-`curl -X GET $JSON_HEADER $DEVICE_URL/session/$SESSION_ID/alert_text`
+`curl -X GET $JSON_HEADER $DEVICE_URL/session/$SESSION_ID/alert/text`
 ### Accept alert
-`curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/accept_alert`
+`curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/alert/accept`
 ### Dismiss alert
-`curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/dismiss_alert`
+`curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/alert/dismiss`
 
 # Touch ID
 ### Match TouchID
