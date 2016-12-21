@@ -1,6 +1,6 @@
 This is list of most common endpoints with some query examples using `curl` with pre-set environment variables:
 * `DEVICE_URL` set as device URL (eg. `http://localhost:8100`)
-* `SESSION_ID` set as session id. Returned by start session command e.g. `D15E12F6-CA23-4CD4-89F9-E5C5EA6F4FAD`
+* `SESSION_ID` set as session id. Returned by start session command e.g. `D15E12F6-CA23-4CD4-89F9-E5C5EA6F4FAD`. If you want to use WebDriverAgent without launching an app you can use the default session ID reported by the `/status` endpoint.
 * `JSON_HEADER='-H "Content-Type: application/json"'`
 
 WebDriverAgent is intended to implement [WebDriver spec](https://w3c.github.io/webdriver/webdriver-spec.html) so we will not get much into details as you can simply read WebDriver spec.
@@ -23,7 +23,10 @@ It is also possible to request to install application before launching it by add
 curl -X POST $JSON_HEADER \
 -d "{\"desiredCapabilities\":{\"bundleId\":\"com.apple.mobilesafari\", \"app\":\"[host_path]/magicapp.app\"}}" \
 $DEVICE_URL/session
-``` 
+```
+
+If you want to use WebDriverAgent without launching an app you can use the default session ID reported by the `/status` endpoint.
+
 ### Querying current session
 `curl -X GET $JSON_HEADER $DEVICE_URL/session/$SESSION_ID`
 ### Removing session and killing application
