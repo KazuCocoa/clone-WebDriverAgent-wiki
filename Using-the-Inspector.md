@@ -31,5 +31,5 @@ http://localhost:8100/inspector
 - JSON elements tree
 
 ```
-http://localhost:8100/tree
+http://localhost:8100/source
 ```
