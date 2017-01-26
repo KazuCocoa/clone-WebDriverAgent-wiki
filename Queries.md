@@ -94,6 +94,8 @@ curl -X POST $JSON_HEADER \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
+Valid attribute names for predicate search are property names defined in https://github.com/facebook/WebDriverAgent/blob/master/WebDriverAgentLib/Routing/FBElement.h protocol. Also, their shortcuts without 'wd' prefixes are supported ('wdVisible' -> 'visible').
+
 In same manner you can query subelements of given element with id by using `/element/:id/elements` endpoint.
 * You can also list all cell for given table view or collection view:
 
