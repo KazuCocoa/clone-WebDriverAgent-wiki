@@ -16,6 +16,7 @@ xcodebuild -project WebDriverAgent.xcodeproj \
            test
 ```
 ### C: Using [fbsimctl](https://github.com/facebook/FBSimulatorControl/tree/master/fbsimctl) from [FBSimulatorControl](https://github.com/facebook/FBSimulatorControl) framework.
+Build WebDriverAgent.xcodeproj and then:
 ```
 ./fbsimctl --state=booted \
            launch_xctest [path]/WebDriverAgentRunner.xctest com.apple.mobilesafari --port 8100 -- \
