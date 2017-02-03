@@ -19,3 +19,8 @@ ___
 You might see this message when trying to running WebDriverAgent on devices. To resolve this issue you should:
 * Set Team in General / Signing section to your Apple Developer Account for both `WebDriverAgentLib` and `WebDriverAgentRunner`
 * Make sure you have available valid wildcard provisioning profile
+
+___
+### Booting WDA on device stops after `Set Up and does not actually start WDA.
+
+This is known Apple bug (check https://github.com/facebook/WebDriverAgent/issues/458) that device at some point wills to working with any XCUITest (not only WDA). Only way to fix it is to reboot device and host (your mac).
