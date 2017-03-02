@@ -36,7 +36,7 @@ If you want to use WebDriverAgent without launching an app you can use the defau
 ### Inspector
 Open web browser at inspector endpoint [/inspector](http://localhost:8100/inspector)
 ### Go to home screen
-`curl -X POST $JSON_HEADER -d "" $DEVICE_URL/homescreen`
+`curl -X POST $JSON_HEADER -d "" $DEVICE_URL/wda/homescreen`
 ### Get a screenshot
 `curl -X GET $JSON_HEADER $DEVICE_URL/screenshot`
 ### Deactivate application for given time
@@ -97,10 +97,6 @@ $DEVICE_URL/session/$SESSION_ID/elements
 Valid attribute names for predicate search are property names defined in https://github.com/facebook/WebDriverAgent/blob/master/WebDriverAgentLib/Routing/FBElement.h protocol. Also, their shortcuts without 'wd' prefixes are supported ('wdVisible' -> 'visible').
 
 In same manner you can query subelements of given element with id by using `/element/:id/elements` endpoint.
-* You can also list all cell for given table view or collection view:
-
-`curl -X GET $JSON_HEADER $DEVICE_URL/session/$SESSION_ID/uiaElement/:id/getVisibleCells`
-
 
 # Interacting with elements
 ### Querying properties
@@ -137,6 +133,6 @@ curl -X POST $JSON_HEADER -d "" $DEVICE_URL/session/$SESSION_ID/element/5/clear
 
 # Touch ID
 ### Match TouchID
-`curl -X POST $JSON_HEADER -d "{\"match\":1}" $DEVICE_URL/session/$SESSION_ID/simulator/touch_id`
+`curl -X POST $JSON_HEADER -d "{\"match\":1}" $DEVICE_URL/session/$SESSION_ID/wda/touch_id`
 ### Do not match TouchID
-`curl -X POST $JSON_HEADER -d "{\"match\":0}" $DEVICE_URL/session/$SESSION_ID/simulator/touch_id`
+`curl -X POST $JSON_HEADER -d "{\"match\":0}" $DEVICE_URL/session/$SESSION_ID/wda/touch_id`
