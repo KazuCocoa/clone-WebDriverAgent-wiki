@@ -40,7 +40,7 @@ Open web browser at inspector endpoint [/inspector](http://localhost:8100/inspec
 ### Get a screenshot
 `curl -X GET $JSON_HEADER $DEVICE_URL/screenshot`
 ### Deactivate application for given time
-`curl -X POST $JSON_HEADER -d "{\"duration\":3}" $DEVICE_URL/session/$SESSION_ID/deactivateApp`
+`curl -X POST $JSON_HEADER -d "{\"duration\":3}" $DEVICE_URL/session/$SESSION_ID/wda/deactivateApp`
 ### Change device orientation
 Supported orientations are:
 - PORTRAIT
