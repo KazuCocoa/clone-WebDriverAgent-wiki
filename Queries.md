@@ -90,7 +90,7 @@ $DEVICE_URL/session/$SESSION_ID/elements
 * using `class chain`
 ```
 curl -X POST $JSON_HEADER \
--d "{\"using\":\"class chain\",\"value\":\"XCUIElementTypeWindow[1]/*/*/XCUIElementTypeButton[-1]\"}" \
+-d "{\"using\":\"class chain\",\"value\":\"XCUIElementTypeWindow[3]/*/*/XCUIElementTypeButton[-1]\"}" \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
