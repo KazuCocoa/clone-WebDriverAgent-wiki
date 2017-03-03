@@ -87,6 +87,23 @@ curl -X POST $JSON_HEADER \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
+* using `class chain`
+```
+curl -X POST $JSON_HEADER \
+-d "{\"using\":\"class chain\",\"value\":\"XCUIElementTypeWindow[1]/*/*/XCUIElementTypeButton[-1]\"}" \
+$DEVICE_URL/session/$SESSION_ID/elements
+```
+
+This query type is similar to xpath, but can only include indexes and valid class names. Only search by direct children of the current element is supported, which makes it faster than xpath queries, especially having element trees with huge count of nodes. Examples of class chain requests:
+
+1. _XCUIElementTypeWindow/XCUIElementTypeButton[3]_: select the third child button of the first child window element
+1. _XCUIElementTypeWindow_: select all the children windows
+1. _XCUIElementTypeWindow[2]_: select the second child window in the hierarchy. Indexing starts at 1
+1. _XCUIElementTypeWindow/XCUIElementTypeAny[3]_: select the third child (of any type) of the first child window
+1. _XCUIElementTypeWindow[2]/XCUIElementTypeAny_: select all the children of the second child window
+1. _XCUIElementTypeWindow[2]/XCUIElementTypeAny[-2]_: select the second last child of the second child window
+1. One may use '*' (star) character to substitute the universal 'XCUIElementTypeAny' class name
+
 * using `predicate string`
 ```
 curl -X POST $JSON_HEADER \
