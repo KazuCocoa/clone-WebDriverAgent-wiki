@@ -1,2 +1,19 @@
-WebDriverAgent also supports sending HTTP requests via USB in cases when your devices have restricted access to Wifi.
-For more detail have a look at [FBHTTPOverUSBServer.m](https://github.com/facebook/WebDriverAgent/blob/master/WebDriverAgentLib/Routing/FBHTTPOverUSBServer.m) and [WebDriverAgentUSBClient](https://github.com/facebook/WebDriverAgent/tree/master/WebDriverAgentUSBClient). It simply listens for wrapped HTTP requests on USB port and is implemented by using [peertalk](https://github.com/rsms/peertalk).
+If you don't want to or can't use Wifi to communicate with WDA you can easily proxy communication via USB with:
+
+- [mobiledevice](https://github.com/imkira/mobiledevice):
+```
+# Install
+$ brew install mobiledevice
+
+# Start proxy
+$ mobiledevice tunnel 8100 8100
+```
+
+- [usbmuxd](https://github.com/libimobiledevice/usbmuxd):
+```
+# Install
+$ brew install usbmuxd
+
+# Start proxy
+$ iproxy 8100 8100
+```
