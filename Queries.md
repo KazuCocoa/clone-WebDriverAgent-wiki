@@ -114,11 +114,11 @@ This query is similar to xpath, but can only include indexes, predicates and val
 1. _XCUIElementTypeWindow[2]/XCUIElementTypeAny_: select all the children of the second child window
 1. _XCUIElementTypeWindow[2]/XCUIElementTypeAny[-2]_: select the second last child of the second child window
  One may use '*' (star) character to substitute the universal 'XCUIElementTypeAny' class name
-1. _XCUIElementTypeWindow[`name CONTAINS[cd] "blabla"`]_: select all windows, where name attribute starts with "blabla" or "BlAbla"
-1. _XCUIElementTypeWindow[`label BEGINSWITH "blabla"`][-1]_: select the last window, where label text begins with "blabla"
-1. _XCUIElementTypeWindow/XCUIElementTypeAny[`value == "bla1" OR label == "bla2"`]_ select all children of the first window, where value is "bla1" or label is "bla2"
-1. _XCUIElementTypeWindow[`name == "you're the winner"`]/XCUIElementTypeAny[`visible == 1`]_ select all visible children of the first window named "you're the winner"
-Predicate string should be always enclosed into <pre>`</pre> characters inside square brackets. Use <pre>``</pre> to escape a single <pre>`</pre> character inside predicate expression. Predicate expression should be always put before the index, but never after it.
+1. _XCUIElementTypeWindow[\`name CONTAINS[cd] "blabla"\`]_: select all windows, where name attribute starts with "blabla" or "BlAbla"
+1. _XCUIElementTypeWindow[\`label BEGINSWITH "blabla"\`][-1]_: select the last window, where label text begins with "blabla"
+1. _XCUIElementTypeWindow/XCUIElementTypeAny[\`value == "bla1" OR label == "bla2"\`]_ select all children of the first window, where value is "bla1" or label is "bla2"
+1. _XCUIElementTypeWindow[\`name == "you're the winner"\`]/XCUIElementTypeAny[\`visible == 1\`]_ select all visible children of the first window named "you're the winner"
+Predicate string should be always enclosed into \` (backtick) characters inside square brackets. Use \`\` (double backtick) to escape a single backtick character inside predicate expression. Predicate expression should be always put before the index, but never after it.
 
 
 # Interacting with elements
