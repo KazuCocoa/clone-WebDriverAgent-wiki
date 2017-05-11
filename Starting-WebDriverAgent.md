@@ -24,4 +24,4 @@ Build WebDriverAgent.xcodeproj and then:
 ```
 
 ### D: Using [FBSimulatorControl](https://github.com/facebook/FBSimulatorControl) framework directly
-Checkout [FBSimulatorInteraction+XCTest.h](https://github.com/facebook/FBSimulatorControl/blob/master/FBSimulatorControl/Interactions/FBSimulatorInteraction%2BXCTest.h)
+Checkout [FBSimulatorXCTestCommands.h](https://github.com/facebook/FBSimulatorControl/blob/master/FBSimulatorControl/Commands/FBSimulatorXCTestCommands.h) and use sample in [tests](https://github.com/facebook/FBSimulatorControl/blob/master/FBSimulatorControlTests/Tests/Integration/FBSimulatorTestInjectionTests.m)
