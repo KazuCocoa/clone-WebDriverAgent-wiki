@@ -129,7 +129,7 @@ One may use '*' (star) character to substitute the universal 'XCUIElementTypeAny
 
 ```XCUIElementTypeWindow[`name == "you're the winner"`]/XCUIElementTypeAny[`visible == 1`]``` - select all visible children of the first window named "you're the winner"
 
-Predicate string should be always enclosed into ` characters inside square brackets. Use `` to escape a single ` character inside predicate expression. Predicate expression should be always put before the index, but never after it.
+Predicate string should be always enclosed into \` characters inside square brackets. Use \`\` to escape a single \` character inside predicate expression. Predicate expression should be always put before the index, but never after it.
 
 It is not recommended to set explicit indexes for intermediate chain elements, because it slows down the lookup speed
 
@@ -143,7 +143,7 @@ Indirect descendant search requests are pretty similar to requests above:
 
 ```**/XCUIElementTypeCell[`name BEGINSWITH "D"`]/**/XCUIElementTypeButton``` - select the all descendant buttons of the first cell in the tree, whose name starts with 'D'
 
-Double star and slash is the marker of the fact, that the next following item is the descendant of the previous chain item, rather than its child.
+Double star and slash '**/' is the marker of the fact, that the next following item is the descendant of the previous chain item, rather than its child.
 
 The query result is similar to what XCTest's _children..._ and _descendants..._ selector calls of XCUIElement class instances produce when combined into a chain.
 
