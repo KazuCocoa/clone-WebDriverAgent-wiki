@@ -102,24 +102,36 @@ In same manner you can query subelements of given element with id by using `/ele
 * using `class chain`
 ```
 curl -X POST $JSON_HEADER \
--d "{\"using\":\"class chain\",\"value\":\"XCUIElementTypeWindow[`value BEGINSWITH 'blabla'`]/*[2]/*/XCUIElementTypeButton[-1]\"}" \
+-d "{\"using\":\"class chain\",\"value\":\"**/XCUIElementTypeOther[`value BEGINSWITH 'blabla'`]/**/XCUIElementTypeButton[`name BEGINSWITH 'cool'`][-1]\"}" \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
-This query is similar to xpath, but can only include indexes, predicates and valid class names. Only search by direct children elements of the current element is supported. Examples of such requests:
-1. _XCUIElementTypeWindow/XCUIElementTypeButton[3]_: select the third child button of the first child window element
-1. _XCUIElementTypeWindow_: select all the children windows
-1. _XCUIElementTypeWindow[2]_: select the second child window in the hierarchy. Indexing starts at 1
-1. _XCUIElementTypeWindow/XCUIElementTypeAny[3]_: select the third child (of any type) of the first child window
-1. _XCUIElementTypeWindow[2]/XCUIElementTypeAny_: select all the children of the second child window
-1. _XCUIElementTypeWindow[2]/XCUIElementTypeAny[-2]_: select the second last child of the second child window
- One may use '*' (star) character to substitute the universal 'XCUIElementTypeAny' class name
-1. _XCUIElementTypeWindow[\`name CONTAINS[cd] "blabla"\`]_: select all windows, where name attribute starts with "blabla" or "BlAbla"
-1. _XCUIElementTypeWindow[\`label BEGINSWITH "blabla"\`][-1]_: select the last window, where label text begins with "blabla"
-1. _XCUIElementTypeWindow/XCUIElementTypeAny[\`value == "bla1" OR label == "bla2"\`]_ select all children of the first window, where value is "bla1" or label is "bla2"
-1. _XCUIElementTypeWindow[\`name == "you're the winner"\`]/XCUIElementTypeAny[\`visible == 1\`]_ select all visible children of the first window named "you're the winner"
+This query is similar to xpath, but can only include indexes, predicates and valid class names. Search by direct children and descendant elements is supported. Examples of direct search requests:
+```XCUIElementTypeWindow/XCUIElementTypeButton[3]``` - select the third child button of the first child window element
+```XCUIElementTypeWindow``` - select all the children windows
+```XCUIElementTypeWindow[2]``` - select the second child window in the hierarchy. Indexing starts at 1
+```XCUIElementTypeWindow/XCUIElementTypeAny[3]``` - select the third child (of any type) of the first child window
+```XCUIElementTypeWindow[2]/XCUIElementTypeAny``` - select all the children of the second child window
+```XCUIElementTypeWindow[2]/XCUIElementTypeAny[-2]``` - select the second last child of the second child window
+One may use '*' (star) character to substitute the universal 'XCUIElementTypeAny' class name
+```XCUIElementTypeWindow[`name CONTAINS[cd] "blabla"`]``` - select all windows, where name attribute starts with "blabla" or "BlAbla"
+```XCUIElementTypeWindow[`label BEGINSWITH "blabla"`][-1]``` - select the last window, where label text begins with "blabla"
+```XCUIElementTypeWindow/XCUIElementTypeAny[`value == "bla1" OR label == "bla2"`]``` - select all children of the first window, where value is "bla1" or label is "bla2"
+```XCUIElementTypeWindow[`name == "you're the winner"`]/XCUIElementTypeAny[`visible == 1`]``` - select all visible children of the first window named "you're the winner"
 
-Predicate string should be always enclosed into \` (backtick) characters inside square brackets. Use \`\` (double backtick) to escape a single backtick character inside predicate expression. Predicate expression should be always put before the index, but never after it.
+Predicate string should be always enclosed into ` characters inside square brackets. Use `` to escape a single ` character inside predicate expression. Predicate expression should be always put before the index, but never after it.
+
+It is not recommended to set explicit indexes for intermediate chain elements, because it slows down the lookup speed
+
+Indirect descendant search requests are pretty similar to requests above:
+```**/XCUIElementTypeCell[`name BEGINSWITH "A"`][-1]/XCUIElementTypeButton[10]``` - select the 10-th child button of the very last cell in the tree, whose name starts with 'A'.
+```**/XCUIElementTypeCell[`name BEGINSWITH "B"`]``` - select all cells in the tree, where name starts with 'B'
+```**/XCUIElementTypeCell[`name BEGINSWITH "C"`]/XCUIElementTypeButton[10]``` - select the 10-th child button of the first cell in the tree, whose name starts with 'C' and which has at least ten direct children of type XCUIElementTypeButton.
+```**/XCUIElementTypeCell[`name BEGINSWITH "D"`]/**/XCUIElementTypeButton``` - select the all descendant buttons of the first cell in the tree, whose name starts with 'D'
+
+Double star and slash is the marker of the fact, that the next following item is the descendant of the previous chain item, rather than its child.
+
+The query result is similar to what XCTest's _children..._ and _descendants..._ selector calls of XCUIElement class instances produce when combined into a chain.
 
 
 # Interacting with elements
