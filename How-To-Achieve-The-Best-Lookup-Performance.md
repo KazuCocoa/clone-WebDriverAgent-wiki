@@ -25,8 +25,8 @@ Always try to use the strategy, which is closer to the top of this list. XPath s
 dstElement =  driver.findElement(By.xpath('//XCUIElementTypeTable[@name="table"]//XCUIElementTypeTextField[@visible="true"]')) -> tableEl = driver.findElement(By.accessibilityId('table')); dstElement = tableEl.findElement(By.predicate('type == "XCUIElementTypeTextField" AND visible == 1'))
 ```
 
-The more UI elements in the current search scope you have the longer lookup times you get. By default the search scope is the source of the whole page (expressions like `driver.findElement(s)`). By limiting it to the source of the particular element (e. g. `tableEl.findElement(s)`) one can decently optimize lookup performance especially if multiple lookups are going to be executed there.
-This strategy can also help to avoid XPath locators or improve lookup times for them if they are executed in limited scope.
+The more UI elements in the current search scope you have the longer lookup times you get. By default the search scope is the source of the whole page (expressions like `driver.findElement`). By limiting it to the source of the particular element (e. g. `tableEl.findElement`) one can decently optimize lookup performance especially if multiple lookups are going to be executed on the same root element.
+This strategy can also help to avoid XPath locators or improve lookup times for them if it is executed in the limited scope.
 
 ## Do Not Search For Multiple Element If Only One Element Is Expected To Be Matched
 
