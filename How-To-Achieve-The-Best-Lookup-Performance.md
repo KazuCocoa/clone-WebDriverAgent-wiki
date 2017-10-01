@@ -42,4 +42,4 @@ Usually `findElements` takes more time to complete than `findElement`, because i
 By.xpath('//*[@*="1"]/parent::*') -> By.xpath('//XCUIElementTypeButton[@name="1"]/parent::XCUIElementTypeCell')
 ```
 
-Generic matchers like asterisk `*` in combination with `findElements` call may require to scan though all UI element attributes, which is quite ineffective from performance perspective. 
+Generic matchers like asterisk `*` in combination with `findElements` call may require to scan all the attributes of each UI element, which is quite ineffective from performance perspective. 
