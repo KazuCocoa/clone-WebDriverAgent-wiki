@@ -5,6 +5,7 @@ This article contains several practical suggestions about how to create effectiv
 ```
 By.xpath('//XCUIElementTypeTable[@name="table"]') -> By.accessibilityId('table')
 By.xpath('//XCUIElementTypeTable[@name="table"]') -> By.predicate('type == "XCUIElementTypeTable" AND name == "table"')
+By.xpath('//XCUIElementTypeTable[@name="table" or @label="tableLabel"]') -> By.predicate('type == "XCUIElementTypeTable" AND (name == "table" OR label == "tableLabel")')
 By.xpath('//XCUIElementTypeTable[@name="table"]/XCUIElementTypeCell[@visible="true"]') -> By.classChain('**/XCUIElementTypeTable[`name == "table"`]/XCUIElementTypeCell[`visible == 1`]')
 ```
 
