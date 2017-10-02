@@ -17,6 +17,9 @@ By.predicate('type == "XCUIElementTypeTable" AND name IN {"table2","table1"}')
 
 By.xpath('//XCUIElementTypeTable[@name="table"]/XCUIElementTypeCell[@visible="true"]') ->
 By.classChain('**/XCUIElementTypeTable[`name == "table"`]/XCUIElementTypeCell[`visible == 1`]')
+
+By.xpath('//XCUIElementTypeTable[@name="table"]//XCUIElementTypeTextField[@name='input' and @visible="true"]') ->
+By.classChain('**/XCUIElementTypeTable[`name == "table"`]/**/XCUIElementTypeTextField[`name == "input" AND visible == 1`]')
 ```
 
 This is the list of available location strategies sorted by their performance (the first one is the fastest one):
