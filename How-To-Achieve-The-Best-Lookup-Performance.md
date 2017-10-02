@@ -3,6 +3,9 @@ This article contains several practical suggestions about how to create effectiv
 ## Select The Most Effective Lookup Strategy
 
 ```
+By.xpath('//XCUIElementTypeTable') -> 
+By.className('XCUIElementTypeTable')
+
 By.xpath('//XCUIElementTypeTable[@name="table"]') -> 
 By.accessibilityId('table')
 
