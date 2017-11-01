@@ -23,6 +23,9 @@ By.classChain('**/XCUIElementTypeTable[`name == "table"`]/XCUIElementTypeCell[`v
 
 By.xpath('//XCUIElementTypeTable[@name="table"]//XCUIElementTypeTextField[@name='input' and @visible="true"]') ->
 By.classChain('**/XCUIElementTypeTable[`name == "table"`]/**/XCUIElementTypeTextField[`name == "input" AND visible == 1`]')
+
+By.xpath('//XCUIElementTypeTable[@name="table"]/XCUIElementTypeCell[@visible="true" and .//XCUIElementTypeTextField[@name="input]]') ->
+By.classChain('**/XCUIElementTypeTable[`name == "table"`]/**/XCUIElementTypeCell[`visible == 1`][$type == "XCUIElementTypeTextField" AND name == "input"$]')
 ```
 
 This is the list of available location strategies sorted by their performance (the first one is the fastest one):
