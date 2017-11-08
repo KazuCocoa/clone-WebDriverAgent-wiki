@@ -2,7 +2,7 @@
 
 This query type is WebDriverAgent's layer over native XCTest lookup function calls defined in [XCUIElementQuery](https://developer.apple.com/documentation/xctest/xcuielementquery?language=objc) class with some additional features, like intermediate chain items indexing and tail-based indexing. Search by direct children and descendant elements is supported. 
 
-## Direct search requests
+## Direct children search requests
 
 * ```XCUIElementTypeWindow/XCUIElementTypeButton[3]``` - select the third child button of the first child window element
 * ```XCUIElementTypeWindow``` - select all the children windows
