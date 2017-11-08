@@ -33,8 +33,8 @@ This is the list of available location strategies sorted by their performance (t
 1. Class Name
 1. Accessibility Id
 1. Link Text
-1. Predicate
-1. Class Chain
+1. [Predicate](https://github.com/facebook/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules)
+1. [Class Chain](https://github.com/facebook/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules)
 1. XPath
 
 Always try to use the strategy, which is closer to the top of this list. XPath strategy can sometimes be very slow, because it is not natively supported by XCTest and WDA requires additional efforts to implement it, which seriously affects lookup time. Use XPath locators only if there is no other alternative, for example if some special functions or axes are used in the query.
