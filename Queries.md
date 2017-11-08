@@ -87,6 +87,8 @@ curl -X POST $JSON_HEADER \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
+It is not recommended to use xpath queries, since they are not supported by XCTest natively and therefore are slow. [Replace](https://github.com/facebook/WebDriverAgent/wiki/How-To-Achieve-The-Best-Lookup-Performance) them with faster query types if possible.
+
 * using `predicate string`
 ```
 curl -X POST $JSON_HEADER \
@@ -94,10 +96,7 @@ curl -X POST $JSON_HEADER \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
-Valid attribute names for predicate search are property names defined in [FBElement](https://github.com/facebook/WebDriverAgent/blob/master/WebDriverAgentLib/Routing/FBElement.h) protocol. Also, their shortcuts without 'wd' prefixes are supported (`wdVisible` == `visible`).
-
-In same manner you can query subelements of given element with id by using `/element/:id/elements` endpoint.
-
+Follow [Predicate Queries Construction Rules](https://github.com/facebook/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules) to compile predicate queries properly and to avoid unexpected errors.
 
 * using `class chain`
 ```
@@ -106,7 +105,10 @@ curl -X POST $JSON_HEADER \
 $DEVICE_URL/session/$SESSION_ID/elements
 ```
 
-Follow [Class Chain Queries Construction Rules](https://github.com/facebook/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules) to compile such queries properly and to avoid unexpected errors.
+Follow [Class Chain Queries Construction Rules](https://github.com/facebook/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules) to compile class chain queries properly and to avoid unexpected errors.
+
+
+In same manner you can query subelements of given element with id by using `/element/:id/elements` endpoint.
 
 
 # Interacting with elements
