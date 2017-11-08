@@ -11,7 +11,7 @@ Follow the rules described in [Predicate Format String Syntax](https://developer
 WebDriverAgent currently defines the following element attributes:
 
 1. `name` - The actual value of element's accessibility identifier or element's label if the first one is not set
-1. `value` - Element's value. It is always of type string (or `nil` if the value is not set) and contains the value of the corresponding element. Depending on the element's type this could be: a text or a placeholder text in the text field; a label on text label; `'1'` or `'0'` if this is a checkbox or a switch
+1. `value` - Element's value. It is always of type string (or `nil` if the value is not set) and contains the value of the corresponding element. Depending on the element's type this could be: a text or a placeholder text in the text field; a label of a text label; `'1'` or `'0'` if this is a checkbox or a switch
 1. `label` - Element's label value or `nil` if it is not present
 1. `rect` - Element's rectangle as a dictionary with the following keys: x, y, width, heigth
 1. `type` - Type string. All the possible element types are enumerated on [this](https://developer.apple.com/documentation/xctest/xcuielementtype) XCTest tutorial page.
